@@ -16,6 +16,29 @@ public class Item extends PanacheEntityBase {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "count", nullable = false)
+    private Integer count;
+
+    @Column(name = "price", nullable = false)
+    private Double price;
+
+    @Column(name = "type")
+    private String type;
+
+    @Column(name = "description", nullable = false)
+    private String description;
+
+    @CreationTimestamp
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
+
     public Long getId() {
         return id;
     }
@@ -79,27 +102,4 @@ public class Item extends PanacheEntityBase {
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
-
-    @Column(name = "name")
-    private String name;
-
-    @Column(name = "count", nullable = false)
-    private Integer count;
-
-    @Column(name = "price", nullable = false)
-    private Double price;
-
-    @Column(name = "type")
-    private String type;
-
-    @Column(name = "description", nullable = false)
-    private String description;
-
-    @CreationTimestamp
-    @Column(name = "created_at")
-    private LocalDateTime createdAt;
-
-    @UpdateTimestamp
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
 }
