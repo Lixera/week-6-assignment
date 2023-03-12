@@ -21,17 +21,17 @@ public class ItemService {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
 
-        return Response.status(Response.Status.OK).entity(Item.find("id = ?1", item.id).list()).build();
+        return Response.status(Response.Status.OK).entity(Item.find("id = ?1", item.getId()).list()).build();
     }
 
     @Transactional
     public Response post(Map<String, Object> request){
         Item item = new Item();
-        item.name = request.get("name").toString();
-        item.count = Integer.parseInt(request.get("count").toString());
-        item.price = Double.parseDouble(request.get("price").toString());
-        item.type = request.get("type").toString();
-        item.description = request.get("description").toString();
+        item.setName(request.get("name").toString());
+        item.setCount(Integer.parseInt(request.get("count").toString()));
+        item.setPrice(Double.parseDouble(request.get("price").toString()));
+        item.setType(request.get("type").toString());
+        item.setDescription(request.get("description").toString());
 
         //savedata
         item.persist();
@@ -47,11 +47,11 @@ public class ItemService {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
 
-        item.name = request.get("name").toString();
-        item.count = Integer.parseInt(request.get("count").toString());
-        item.price = Double.parseDouble(request.get("price").toString());
-        item.type = request.get("type").toString();
-        item.description = request.get("description").toString();
+        item.setName(request.get("name").toString());
+        item.setCount(Integer.parseInt(request.get("count").toString()));
+        item.setPrice(Double.parseDouble(request.get("price").toString()));
+        item.setType(request.get("type").toString());
+        item.setDescription(request.get("description").toString());
 
         //savedata
         item.persist();
