@@ -65,7 +65,7 @@
 			<staticText>
 				<reportElement style="Title" x="0" y="5" width="263" height="33" uuid="cf4799a0-8862-492c-9539-904f69e078d2"/>
 				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[RANDOM DATA ITEM]]></text>
+				<text><![CDATA[Random Data Item]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="SubTitle" x="63" y="39" width="200" height="22" forecolor="#FFFFFF" uuid="a49f9e55-5e6d-4cee-918b-ed362f3141a0"/>
