@@ -1,7 +1,6 @@
 package id.kawahedukasi.controller;
 
 import id.kawahedukasi.service.MailService;
-import net.sf.jasperreports.engine.JRException;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -21,14 +20,14 @@ public class MailControll {
     MailService mailService;
 
     @POST
-    public Response sendEmail(Map<String, Object> request) throws IOException {
+    public Response sendEmail(Map<String, Object> request){
         mailService.sendEmail(request.get("email").toString());
         return Response.ok(new HashMap<>()).build();
     }
 
     @POST
     @Path("/excel")
-    public Response sendExcelEmail(Map<String, Object> request) throws IOException, JRException {
+    public Response sendExcelEmail(Map<String, Object> request) throws IOException {
         mailService.sendExcelToEmail(request.get("email").toString());
         return Response.ok(new HashMap<>()).build();
     }
